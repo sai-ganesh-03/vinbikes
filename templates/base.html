@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <title>Vintage Bikes</title>
+    <style>
+        html, body {
+            height: 100%;
+        }
+    </style>
+</head>
+<body class="flex flex-col min-h-screen">
+    <nav class="bg-gray-800 p-4">
+        <div class="container mx-auto flex justify-between">
+            <div>
+                <a href="/" class="text-white">Home</a>
+                {% if session['username'] %}
+                    <span class="text-white ml-4">Welcome, {{ username }}!</span>
+                {% endif %}
+            </div>
+            <div>
+                {% if session['username'] %}
+                    <a href="/logout" class="text-white ml-4">Logout</a>
+                {% else %}
+                    <a href="/login" class="text-white ml-4">Login</a>
+                    <a href="/register" class="text-white ml-4">Register</a>
+                {% endif %}
+            </div>
+        </div>
+    </nav>
+    <main class="flex-grow container mx-auto mt-4">
+        {% block content %}{% endblock %}
+    </main>
+    <footer class="bg-gray-800 p-4 mt-auto">
+        <div class="container mx-auto text-center">
+            <a href="{{ url_for('custom_bikes') }}" class="text-white text-lg hover:underline">Custom Bikes</a>
+        </div>
+    </footer>
+</body>
+</html>

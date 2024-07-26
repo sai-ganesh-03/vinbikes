@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+    {% for custom_bike in custom_bikes %}
+    <div class="border p-4 rounded shadow">
+        <img src="{{ custom_bike[6] }}" alt="{{ custom_bike[1] }}" class="w-full h-48 object-cover mb-4">
+        <h2 class="text-xl font-bold">{{ custom_bike[1] }}</h2>
+        <p><strong>Customization Level 1:</strong> {{ custom_bike[2] }}</p>
+        <p><strong>Customization Level 2:</strong> {{ custom_bike[3] }}</p>
+        <p><strong>Customization Level 3:</strong> {{ custom_bike[4] }}</p>
+        <p class="mt-2"><strong>Description:</strong> {{ custom_bike[5] }}</p>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

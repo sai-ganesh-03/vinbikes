@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+    {% for bike in bikes %}
+    <div class="border p-4 rounded shadow">
+        <img src="{{ bike[5] }}" alt="{{ bike[1] }}" class="w-full h-48 object-cover mb-4">
+        <h2 class="text-xl font-bold">{{ bike[1] }}</h2>
+        <p>{{ bike[2] }}</p>
+        <a href="{{ url_for('bike_detail', bike_id=bike[0]) }}" class="text-blue-500 hover:underline">View Details</a>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
