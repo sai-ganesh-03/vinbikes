@@ -9,6 +9,18 @@
         <p><strong>Customization Level 2:</strong> {{ custom_bike[3] }}</p>
         <p><strong>Customization Level 3:</strong> {{ custom_bike[4] }}</p>
         <p class="mt-2"><strong>Description:</strong> {{ custom_bike[5] }}</p>
+        <label for="levelInput">Choose your Level :</label>
+        <input class="border-2 border-black" list="levels" name="levels" id="levelInput">
+
+        <datalist id="levels">
+            <option value="Level 1">
+            <option value="Level 2">
+            <option value="Level 3">
+            
+        </datalist>
+        <button class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
+            Submit
+          </button>
     </div>
     {% endfor %}
 </div>

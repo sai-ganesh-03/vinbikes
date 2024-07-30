@@ -22,3 +22,5 @@ CREATE TABLE custom_bikes (
     description TEXT,
     image_url VARCHAR(255),
 );
+venv\Scripts\activate
+Set-ExecutionPolicy Unrestricted -Scope Process
